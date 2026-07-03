@@ -14,7 +14,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,500;0,600;0,700;0,800;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <!-- Icons -->
   <script defer src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -37,13 +37,11 @@
       <li><a href="#about">À Propos</a></li>
       <li><a href="#contact">Devis Gratuit</a></li>
     </ul>
-
     <div class="nav-cta">
       <a href="tel:5148632841" class="nav-phone">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .99h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.79a16 16 0 006.12 6.12l1.07-1.16a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
         (514) 863-2841
       </a>
-      <a href="#contact" class="btn btn-primary btn-sm">Devis gratuit</a>
     </div>
 
     <button id="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-mobile">
@@ -132,27 +130,57 @@
       <p class="section-subtitle">Professionnels rapides et soigneux, disponibles pour particuliers comme pour entreprises partout à Montréal.</p>
     </div>
 
-    <div class="services-grid">
-      <article class="service-card" data-reveal="up" data-delay="100">
-        <div class="service-corner-num">01</div>
-        <div class="service-icon" role="img" aria-label="Icône débarras">🗑️</div>
-        <h3>Débarras &amp; Récupération</h3>
-        <p>Nous vidons vos espaces encombrés : sous-sols, garages, greniers, entrepôts ou successions. Ramassage de meubles, électroménagers et détritus. Nettoyage complet inclus.</p>
-      </article>
+    <div class="services-timeline">
+      <!-- Step 1 -->
+      <div class="service-timeline-item" data-reveal="up" data-delay="100">
+        <div class="service-timeline-image">
+          <img src="assets/img/portfolio/photo2.jpeg" alt="Service de Débarras et Récupération d'objets" loading="lazy" width="600" height="450" />
+        </div>
+        <div class="service-timeline-content">
+          <div class="service-timeline-number">01</div>
+          <h3>Débarras &amp; Récupération</h3>
+          <p>Nous vidons tous vos espaces encombrés : sous-sols, garages, greniers, entrepôts, bureaux ou successions. Nous ramassons vos vieux meubles, appareils électroménagers défectueux, détritus, puis nous balayons et nettoyons soigneusement après notre passage.</p>
+          <ul class="service-timeline-features">
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Tri sélectif & recyclage</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Nettoyage complet après passage</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Dons aux organismes de charité</li>
+          </ul>
+        </div>
+      </div>
 
-      <article class="service-card" data-reveal="up" data-delay="200">
-        <div class="service-corner-num">02</div>
-        <div class="service-icon" role="img" aria-label="Icône déménagement">🚛</div>
-        <h3>Déménagement</h3>
-        <p>Déménagement résidentiel et commercial local, sécuritaire et sur mesure. Notre équipe qualifiée protège vos biens, de l'emballage jusqu'au transport vers votre nouvelle adresse.</p>
-      </article>
+      <!-- Step 2 -->
+      <div class="service-timeline-item" data-reveal="up" data-delay="200">
+        <div class="service-timeline-image">
+          <img src="assets/img/portfolio/photo1.jpeg" alt="Service de Déménagement résidentiel et commercial" loading="lazy" width="600" height="450" />
+        </div>
+        <div class="service-timeline-content">
+          <div class="service-timeline-number">02</div>
+          <h3>Déménagement Professionnel</h3>
+          <p>Un service de déménagement local résidentiel et commercial, hautement sécurisé et sur mesure. Notre équipe dynamique prend soin de manipuler vos cartons et meubles fragiles avec des équipements de protection professionnels (couvertures, sangles, chariots).</p>
+          <ul class="service-timeline-features">
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Emballage et protection premium</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Camions équipés et sécurisés</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Assurance responsabilité complète</li>
+          </ul>
+        </div>
+      </div>
 
-      <article class="service-card" data-reveal="up" data-delay="300">
-        <div class="service-corner-num">03</div>
-        <div class="service-icon" role="img" aria-label="Icône transport">📦</div>
-        <h3>Transport &amp; Livraison</h3>
-        <p>Déplacement d'objets lourds, ramassage en magasin ou livraison express. Nous mettons nos camions et notre équipe à votre disposition pour acheminer vos marchandises en toute confiance.</p>
-      </article>
+      <!-- Step 3 -->
+      <div class="service-timeline-item" data-reveal="up" data-delay="300">
+        <div class="service-timeline-image">
+          <img src="assets/img/portfolio/photo3.jpeg" alt="Service de Transport et Livraison d'objets lourds" loading="lazy" width="600" height="450" />
+        </div>
+        <div class="service-timeline-content">
+          <div class="service-timeline-number">03</div>
+          <h3>Transport &amp; Livraison</h3>
+          <p>Besoin de transporter un meuble lourd, un piano, un appareil électroménager ou d'un ramassage rapide en magasin ? Nous mettons nos véhicules utilitaires et nos déménageurs qualifiés à votre service pour des livraisons express en toute confiance.</p>
+          <ul class="service-timeline-features">
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Manutention d'objets lourds</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Ramassage et livraison magasin</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Flexible et ponctuel</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </section>
