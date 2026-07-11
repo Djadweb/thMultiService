@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Non Trouvée (404) | TH Multi-services</title>
+  <meta name="description" content="Oups ! La page que vous recherchez n'existe pas. Retournez sur le site officiel de TH Multi-services pour vos besoins de débarras et déménagement à Laval et Montréal." />
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --c-blue: #1a6dff;
+      --c-blue-mid: #1259e0;
+      --c-ink: #08090e;
+      --c-ink-2: #101420;
+      --c-white: #f9fbff;
+      --c-grey: #8492a6;
+      --f-display: 'Plus Jakarta Sans', sans-serif;
+      --f-body: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: var(--c-ink);
+      color: var(--c-white);
+      font-family: var(--f-body);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      padding: 2rem;
+      box-sizing: border-box;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Ambient background orbs */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.15;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .orb-blue-mid {
+      width: 400px;
+      height: 400px;
+      background-color: var(--c-blue-mid);
+      top: -100px;
+      left: -100px;
+    }
+    .orb-blue {
+      width: 450px;
+      height: 450px;
+      background-color: var(--c-blue);
+      bottom: -150px;
+      right: -100px;
+    }
+
+    .container {
+      max-width: 550px;
+      width: 100%;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 24px;
+      padding: 3rem 2rem;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+      z-index: 2;
+    }
+
+    .logo {
+      margin-bottom: 2rem;
+      display: inline-block;
+    }
+    .logo img {
+      height: 52px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .error-code {
+      font-family: var(--f-display);
+      font-size: 6rem;
+      font-weight: 800;
+      line-height: 1;
+      margin: 0 0 1rem;
+      background: linear-gradient(135deg, #fff, var(--c-blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -2px;
+    }
+
+    h1 {
+      font-family: var(--f-display);
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin: 0 0 1rem;
+      color: var(--c-white);
+    }
+
+    p {
+      color: var(--c-grey);
+      font-size: 1rem;
+      line-height: 1.6;
+      margin: 0 0 2rem;
+    }
+
+    .links-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.875rem 1.5rem;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--c-blue);
+      color: #fff;
+      grid-column: span 2;
+      box-shadow: 0 4px 16px rgba(26, 109, 255, 0.3);
+    }
+    .btn-primary:hover {
+      background: var(--c-blue-mid);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(26, 109, 255, 0.4);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--c-white);
+    }
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .contact-footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 1.5rem;
+      margin-top: 2rem;
+      font-size: 0.875rem;
+      color: var(--c-grey);
+    }
+    .contact-footer a {
+      color: var(--c-blue);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .contact-footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 480px) {
+      .links-grid {
+        grid-template-columns: 1fr;
+      }
+      .btn-primary {
+        grid-column: span 1;
+      }
+      .container {
+        padding: 2rem 1.5rem;
+      }
+      .error-code {
+        font-size: 4.5rem;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="orb orb-blue-mid"></div>
+  <div class="orb orb-blue"></div>
+
+  <div class="container">
+    <a href="https://thmultiservices.ca/" class="logo" aria-label="Retour à l'accueil de TH Multi-services">
+      <img src="assets/img/logoTH.png" alt="Logo TH Multi-services" />
+    </a>
+    
+    <div class="error-code">404</div>
+    <h1>Oups ! Page introuvable</h1>
+    <p>La page que vous recherchez n'existe pas, a été déplacée ou est temporairement indisponible.</p>
+
+    <div class="links-grid">
+      <a href="https://thmultiservices.ca/" class="btn btn-primary">Retourner à l'accueil</a>
+      <a href="https://thmultiservices.ca/#services" class="btn btn-secondary">Nos Services</a>
+      <a href="https://thmultiservices.ca/#portfolio" class="btn btn-secondary">Réalisations</a>
+    </div>
+
+    <div class="contact-footer">
+      Besoin d'aide immédiate ? Appelez-nous au <a href="tel:5148632841">(514) 863-2841</a>
+    </div>
+  </div>
+
+</body>
+</html>
