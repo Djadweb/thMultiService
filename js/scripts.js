@@ -191,7 +191,7 @@ const on = (el, ev, fn, opts) => el && el.addEventListener(ev, fn, opts);
   });
 
   // Drag & drop
-  on(zone, 'dragover', e => { e.preventDefault(); zone.style.borderColor = 'rgba(255,107,26,0.6)'; });
+  on(zone, 'dragover', e => { e.preventDefault(); zone.style.borderColor = 'rgba(26,109,255,0.6)'; });
   on(zone, 'dragleave', () => { zone.style.borderColor = ''; });
   on(zone, 'drop', e => {
     e.preventDefault();

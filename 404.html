@@ -14,9 +14,8 @@
 
   <style>
     :root {
-      --c-orange: #ff6b1a;
-      --c-orange-mid: #e85e12;
       --c-blue: #1a6dff;
+      --c-blue-mid: #1259e0;
       --c-ink: #08090e;
       --c-ink-2: #101420;
       --c-white: #f9fbff;
@@ -49,10 +48,10 @@
       z-index: 1;
       pointer-events: none;
     }
-    .orb-orange {
+    .orb-blue-mid {
       width: 400px;
       height: 400px;
-      background-color: var(--c-orange);
+      background-color: var(--c-blue-mid);
       top: -100px;
       left: -100px;
     }
@@ -93,7 +92,7 @@
       font-weight: 800;
       line-height: 1;
       margin: 0 0 1rem;
-      background: linear-gradient(135deg, #fff, var(--c-orange));
+      background: linear-gradient(135deg, #fff, var(--c-blue));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       letter-spacing: -2px;
@@ -135,15 +134,15 @@
     }
 
     .btn-primary {
-      background: var(--c-orange);
+      background: var(--c-blue);
       color: #fff;
       grid-column: span 2;
-      box-shadow: 0 4px 16px rgba(255, 107, 26, 0.3);
+      box-shadow: 0 4px 16px rgba(26, 109, 255, 0.3);
     }
     .btn-primary:hover {
-      background: var(--c-orange-mid);
+      background: var(--c-blue-mid);
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(255, 107, 26, 0.4);
+      box-shadow: 0 6px 20px rgba(26, 109, 255, 0.4);
     }
 
     .btn-secondary {
@@ -165,7 +164,7 @@
       color: var(--c-grey);
     }
     .contact-footer a {
-      color: var(--c-orange);
+      color: var(--c-blue);
       text-decoration: none;
       font-weight: 600;
     }
@@ -194,7 +193,7 @@
 </head>
 <body>
 
-  <div class="orb orb-orange"></div>
+  <div class="orb orb-blue-mid"></div>
   <div class="orb orb-blue"></div>
 
   <div class="container">
