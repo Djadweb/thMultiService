@@ -330,10 +330,11 @@ body::before {
   position: relative;
   min-height: 100svh;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
   overflow: hidden;
-  padding: var(--nav-h) 2rem 6rem;
+  padding: var(--nav-h) 2rem 0;
+  gap: 2rem;
 }
 
 .hero-bg {
@@ -395,6 +396,7 @@ body::before {
   z-index: 2;
   text-align: center;
   max-width: 900px;
+  margin-top: auto;
 }
 
 .hero-badge {
@@ -456,10 +458,9 @@ body::before {
 
 /* Stats bar */
 .hero-stats {
-  position: absolute;
-  bottom: 2.5rem;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
+  margin-top: auto;
+  margin-bottom: 2.5rem;
   display: flex;
   align-items: center;
   gap: 4.5rem;
@@ -471,7 +472,7 @@ body::before {
   padding: 1.375rem 3.5rem;
   border-radius: 18px;
   box-shadow: var(--shadow-lg);
-  animation: fadeUpStats 0.7s 0.5s var(--ease-out) both;
+  animation: fadeUp 0.7s 0.5s var(--ease-out) both;
   white-space: nowrap;
 }
 .hero-stat {
