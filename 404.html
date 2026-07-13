@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Page Non Trouvée (404) | TH Multi-services</title>
-  <meta name="description" content="Oups ! La page que vous recherchez n'existe pas. Retournez sur le site officiel de TH Multi-services pour vos besoins de débarras et déménagement à Laval et Montréal." />
+  <meta name="description" content="Oups ! La page que vous recherchez n'existe pas. Retournez sur le site officiel de TH Multi-services pour vos besoins de ramassage et déménagement à Montréal, Rive-Nord et Rive-Sud." />
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
   
   <!-- Fonts -->
@@ -16,16 +16,16 @@
     :root {
       --c-blue: #1a6dff;
       --c-blue-mid: #1259e0;
-      --c-ink: #08090e;
-      --c-ink-2: #101420;
-      --c-white: #f9fbff;
-      --c-grey: #8492a6;
+      --c-ink: #f9fbff;
+      --c-ink-2: #f1f5f9;
+      --c-white: #08090e;
+      --c-grey: #64748b;
       --f-display: 'Plus Jakarta Sans', sans-serif;
       --f-body: 'Inter', sans-serif;
     }
 
     body {
-      background-color: var(--c-ink);
+      background-color: #ffffff;
       color: var(--c-white);
       font-family: var(--f-body);
       min-height: 100vh;
@@ -44,7 +44,7 @@
       position: absolute;
       border-radius: 50%;
       filter: blur(100px);
-      opacity: 0.15;
+      opacity: 0.05;
       z-index: 1;
       pointer-events: none;
     }
@@ -67,12 +67,12 @@
       max-width: 550px;
       width: 100%;
       text-align: center;
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid rgba(255, 255, 255, 0.06);
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.06);
       border-radius: 24px;
       padding: 3rem 2rem;
       backdrop-filter: blur(20px);
-      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.08);
       z-index: 2;
     }
 
@@ -92,7 +92,7 @@
       font-weight: 800;
       line-height: 1;
       margin: 0 0 1rem;
-      background: linear-gradient(135deg, #fff, var(--c-blue));
+      background: linear-gradient(135deg, var(--c-white), var(--c-blue));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       letter-spacing: -2px;
@@ -146,18 +146,18 @@
     }
 
     .btn-secondary {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: #f1f5f9;
+      border: 1px solid rgba(0, 0, 0, 0.08);
       color: var(--c-white);
     }
     .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.15);
+      background: #e2e8f0;
+      border-color: rgba(0, 0, 0, 0.15);
       transform: translateY(-2px);
     }
 
     .contact-footer {
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
       padding-top: 1.5rem;
       margin-top: 2rem;
       font-size: 0.875rem;
