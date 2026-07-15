@@ -111,6 +111,13 @@ const on = (el, ev, fn, opts) => el && el.addEventListener(ev, fn, opts);
     overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
 
+    // Play video inside modal if exists
+    const video = $('video', overlay);
+    if (video) {
+      video.currentTime = 0;
+      video.play().catch(() => {});
+    }
+
     // Focus the close button
     const closeBtn = $('.modal-close', overlay);
     closeBtn && setTimeout(() => closeBtn.focus(), 50);
@@ -120,6 +127,13 @@ const on = (el, ev, fn, opts) => el && el.addEventListener(ev, fn, opts);
     overlay.classList.remove('active');
     overlay.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+
+    // Pause video inside modal if exists
+    const video = $('video', overlay);
+    if (video) {
+      video.pause();
+    }
+
     prevFocus && prevFocus.focus();
   };
 
