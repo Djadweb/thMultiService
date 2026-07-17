@@ -296,18 +296,24 @@ const on = (el, ev, fn, opts) => el && el.addEventListener(ev, fn, opts);
     hideMsg(successEl);
     hideMsg(errorEl);
 
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
     btn.disabled = true;
     btn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/></svg> Envoi en cours…`;
 
     const data = new FormData();
-    data.append('access_key', '51e3ae7f-27d3-47ba-97da-d88e71d4d4ee');
-    data.append('Nom Complet',       $('#name').value.trim());
+    data.append('access_key', '02a54534-9988-48fe-a14c-09aec185c710');
+    data.append('subject',           'Nouvelle demande de devis - TH Multi-services');
+    data.append('Nom_Complet',       $('#name').value.trim());
     data.append('email',             $('#email').value.trim());
-    data.append('Téléphone',         $('#phone').value.trim());
-    data.append('Service Souhaité',  $('#service').value);
-    data.append('Adresse Départ',    $('#adresseDepart').value.trim());
-    data.append('Adresse Arrivée',   ($('#adresseArrivee') || { value: '' }).value.trim());
-    data.append('Détails du Projet', $('#message').value.trim());
+    data.append('Telephone',         $('#phone').value.trim());
+    data.append('Service_Souhaite',  $('#service').value);
+    data.append('Adresse_Depart',    $('#adresseDepart').value.trim());
+    data.append('Adresse_Arrivee',   ($('#adresseArrivee') || { value: '' }).value.trim());
+    data.append('Details_du_Projet', $('#message').value.trim());
 
     const files = window._getUploadedFiles ? window._getUploadedFiles() : [];
     files.forEach(f => data.append('attachment[]', f, f.name));
