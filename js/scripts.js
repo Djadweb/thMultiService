@@ -1,6 +1,6 @@
 /**
  * TH Multi-services v3 — Main JavaScript
- * Handles: Nav, Scroll Reveal, Modals, Photo Upload, Form Submit
+ * Handles: Nav, Scroll Reveal, Modals, Form Submit
  */
 
 'use strict';
@@ -187,90 +187,6 @@ const on = (el, ev, fn, opts) => el && el.addEventListener(ev, fn, opts);
 })();
 
 
-// ── Upload Zone ────────────────────────────────────────────────────
-(function initUpload() {
-  const zone = $('#upload-zone');
-  const input = $('#photos');
-  const container = $('#preview-container');
-  if (!zone || !input || !container) return;
-
-  let selectedFiles = [];
-
-  // Click on zone triggers input
-  on(zone, 'click', (e) => {
-    if (e.target !== input) input.click();
-  });
-  on(zone, 'keydown', e => {
-    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); input.click(); }
-  });
-
-  // Drag & drop
-  on(zone, 'dragover', e => { e.preventDefault(); zone.style.borderColor = 'rgba(26,109,255,0.6)'; });
-  on(zone, 'dragleave', () => { zone.style.borderColor = ''; });
-  on(zone, 'drop', e => {
-    e.preventDefault();
-    zone.style.borderColor = '';
-    handleFiles(e.dataTransfer.files);
-  });
-
-  on(input, 'change', (e) => handleFiles(e.target.files));
-
-  const handleFiles = (files) => {
-    const arr = [...files].filter(f => f.type.startsWith('image/'));
-    const remaining = 5 - selectedFiles.length;
-    if (arr.length > remaining) {
-      alert(`Maximum 5 photos. Vous pouvez encore en ajouter ${remaining}.`);
-      return;
-    }
-    arr.forEach(file => {
-      if (selectedFiles.length >= 5) return;
-      selectedFiles.push(file);
-      addPreview(file);
-    });
-  };
-
-  const addPreview = (file) => {
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      const badge = document.createElement('div');
-      badge.className = 'preview-badge';
-      badge.setAttribute('role', 'listitem');
-
-      const thumb = document.createElement('img');
-      thumb.src = e.target.result;
-      thumb.className = 'preview-thumb';
-      thumb.alt = file.name;
-
-      const name = document.createElement('span');
-      name.className = 'preview-name';
-      name.textContent = file.name;
-
-      const rm = document.createElement('button');
-      rm.type = 'button';
-      rm.className = 'preview-remove';
-      rm.innerHTML = '&times;';
-      rm.setAttribute('aria-label', `Retirer ${file.name}`);
-      on(rm, 'click', () => {
-        selectedFiles = selectedFiles.filter(f => f !== file);
-        badge.remove();
-      });
-
-      badge.append(thumb, name, rm);
-      container.appendChild(badge);
-    };
-    reader.readAsDataURL(file);
-  };
-
-  // Expose selectedFiles for form submission
-  window._getUploadedFiles = () => selectedFiles;
-  window._resetUpload = () => {
-    selectedFiles = [];
-    container.innerHTML = '';
-    input.value = '';
-  };
-})();
-
-
 // ── Contact Form ───────────────────────────────────────────────────
 (function initForm() {
   const form = $('#contactForm');
@@ -315,9 +231,6 @@ const on = (el, ev, fn, opts) => el && el.addEventListener(ev, fn, opts);
     data.append('Adresse_Arrivee',   ($('#adresseArrivee') || { value: '' }).value.trim());
     data.append('Details_du_Projet', $('#message').value.trim());
 
-    const files = window._getUploadedFiles ? window._getUploadedFiles() : [];
-    files.forEach(f => data.append('attachment[]', f, f.name));
-
     try {
       const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data });
       const json = await res.json();
@@ -325,7 +238,6 @@ const on = (el, ev, fn, opts) => el && el.addEventListener(ev, fn, opts);
       if (json.success) {
         showMsg(successEl, '✅ Votre demande a bien été envoyée ! Nous vous répondrons sous 24h.');
         form.reset();
-        if (window._resetUpload) window._resetUpload();
         btn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Devis envoyé !`;
       } else {
         throw new Error(json.message || 'Erreur inconnue');
