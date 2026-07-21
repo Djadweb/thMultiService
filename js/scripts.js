@@ -10,6 +10,22 @@ const $ = (sel, ctx = document) => ctx.querySelector(sel);
 const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 const on = (el, ev, fn, opts) => el && el.addEventListener(ev, fn, opts);
 
+const trackGoogleAdsConversion = () => {
+  if (typeof window.gtag === 'function') {
+    window.gtag('event', 'conversion', {
+      send_to: 'AW-18331112277/AldRCPubxNIcENWm-qRE'
+    });
+    return;
+  }
+
+  if (window.dataLayer) {
+    window.dataLayer.push({
+      event: 'conversion',
+      send_to: 'AW-18331112277/AldRCPubxNIcENWm-qRE'
+    });
+  }
+};
+
 // ── Nav: Scroll behaviour + mobile toggle ──────────────────────────
 (function initNav() {
   const nav = $('#mainNav');
@@ -237,6 +253,7 @@ const on = (el, ev, fn, opts) => el && el.addEventListener(ev, fn, opts);
 
       if (json.success) {
         showMsg(successEl, '✅ Votre demande a bien été envoyée ! Nous vous répondrons sous 24h.');
+        trackGoogleAdsConversion();
         form.reset();
         btn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Devis envoyé !`;
       } else {
